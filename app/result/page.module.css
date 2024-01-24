@@ -1,11 +1,42 @@
-.main {
+.mainContainer {
   min-height: 100vh;
   background-color: #7c6af8;
 }
 
-.container {
-  display: flex;
-  align-items: center;
+.sectionBox {
+  padding: 2.25rem 1.4rem;
+}
+
+.boxContent {
   width: 100%;
-  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .sectionBox {
+    padding: 5rem 5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .previewCardBox {
+    width: 31.8rem;
+  }
+
+  .boxContent {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.9rem;
+  }
+
+  .sectionBox {
+    padding: 5rem 4rem 5rem 4rem;
+  }
+}
+
+@media (min-width: 1281px) {
+  .sectionBox {
+    padding: 7.35rem 11.9rem 10.8rem 7.35rem;
+  }
 }

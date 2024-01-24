@@ -6,9 +6,5 @@ export function HomePageContainer({ children }: { children: React.ReactNode }) {
 }
 
 export function ResultPageContainer({ children }: { children: React.ReactNode }) {
-  return (
-    <section className={styles.resultSection}>
-      <div className={styles.sectionContainer}>{children}</div>
-    </section>
-  );
+  return <section className={styles.resultSection}>{children}</section>;
 }

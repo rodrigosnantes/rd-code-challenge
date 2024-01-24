@@ -16,5 +16,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 8px; */
+}
+
+.arrowIcon {
+  width: '1.5rem';
+  height: '1.5rem';
+  rotate: 90deg;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
 }
