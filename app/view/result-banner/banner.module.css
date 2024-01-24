@@ -1,0 +1,17 @@
+.banner {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .banner {
+    display: block;
+    width: 21rem;
+  }
+}
+
+@media (min-width: 1281px) {
+  .banner {
+    display: block;
+    width: 28.4rem;
+  }
+}

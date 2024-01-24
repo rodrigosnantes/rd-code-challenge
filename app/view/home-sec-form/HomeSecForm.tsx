@@ -1,5 +1,5 @@
 import Input from '../input/Input';
-import styles from './homeSecForm.module.css'
+import styles from './home-sec-form.module.css'
 
 export default function HomeSectionForm() {
   return (

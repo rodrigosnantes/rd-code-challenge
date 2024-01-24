@@ -1,4 +1,4 @@
-import styles from './homeSecTitle.module.css'
+import styles from './home-sec-title.module.css'
 
 export default function HomeSectionTitle() {
   return (

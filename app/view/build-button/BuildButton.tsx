@@ -1,8 +1,8 @@
 'use client';
-
-import styles from './buildButton.module.css';
 import { useRouter } from 'next/navigation';
+
 import Arrow from '../arrow/Arrow';
+import styles from './build-button.module.css';
 
 export default function BuildButton() {
   const router = useRouter();

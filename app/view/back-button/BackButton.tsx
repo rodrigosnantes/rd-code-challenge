@@ -1,7 +1,7 @@
 'use client';
-
-import styles from './back.module.css';
 import { useRouter } from 'next/navigation';
+
+import styles from './back-button.module.css';
 
 export default function BackButton() {
   const router = useRouter();

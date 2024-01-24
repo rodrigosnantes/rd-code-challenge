@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './homeUsagePolicy.module.css';
+import styles from './home-usage-policy.module.css';
 
 export default function HomeUsagePolicy() {
   return (

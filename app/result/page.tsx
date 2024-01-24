@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import Footer from '../view/footer/Footer';
 import Header from '../view/header/Header';
 
@@ -7,6 +6,8 @@ import BackButton from '../view/back-button/BackButton';
 import MarketingRedirect from '../view/marketing-redirect/MarketingRedirect';
 import PreviewCard from '../view/preview-card/PreviewCard';
 import ResultBanner from '../view/result-banner/ResultBanner';
+
+import styles from './page.module.css';
 
 export default function Result() {
   return (
