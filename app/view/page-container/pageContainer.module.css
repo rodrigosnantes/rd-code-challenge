@@ -1,0 +1,32 @@
+.homeSection {
+  width: 100%;
+  padding: 3.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7.3rem 11.9rem;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .homeSection {
+    width: 100%;
+    padding: 4.5rem 5rem;
+  }
+}

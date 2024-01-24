@@ -1,0 +1,28 @@
+.button {
+  margin-bottom: 3.3rem;
+  width: 100%;
+  text-align: center;
+  height: 3rem;
+  background: #f2bf4e;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  cursor: pointer;
+  box-shadow: rgb(0, 0, 0) 0px 3px 0px 0px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowButton {
+  width: '1.5rem';
+  height: '1.5rem';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  text-align: 'center';
+}

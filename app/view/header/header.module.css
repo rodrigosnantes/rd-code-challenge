@@ -1,0 +1,42 @@
+.header {
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.image {
+  width: 100px;
+  height: 24px;
+}
+
+.headerText {
+  font-family: 'Darker Grotesque';
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5rem 1.5rem 5rem;
+    background-color: #fff;
+    font-weight: 700;
+  }
+
+  .image {
+    width: 147px;
+    height: 36px;
+  }
+
+  .headerText {
+    font-family: 'Darker Grotesque';
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}

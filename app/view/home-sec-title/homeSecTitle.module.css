@@ -1,0 +1,38 @@
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.titleContainerH1 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 31px;
+  text-align: center;
+}
+
+.titleContainerH3 {
+  font-size: 1rem;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media (min-width: 1025px) {
+  .titleContainer {
+    width: 38.8rem;
+  }
+
+  .titleContainerH1 {
+    font-size: 2.5rem;
+    line-height: 52.92px;
+  }
+
+  .titleContainerH3 {
+    font-size: 1.25rem;
+    line-height: 28px;
+    font-weight: 100;
+  }
+}

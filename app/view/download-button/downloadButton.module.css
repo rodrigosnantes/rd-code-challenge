@@ -1,0 +1,20 @@
+.button {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  height: 3rem;
+  background: #e1e4e8;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #97a1ac;
+  border: 1px solid #97a1ac;
+  cursor: pointer;
+  box-shadow: rgb(151, 161, 172) 0px 3px 0px 0px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 8px; */
+}
