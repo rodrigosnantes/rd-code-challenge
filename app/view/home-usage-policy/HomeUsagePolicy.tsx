@@ -15,6 +15,7 @@ export default function HomeUsagePolicy() {
             color: '#fff',
             marginLeft: '2px',
           }}
+          target="_blank"
           href="https://legal.rdstation.com/pt/privacy-policy/"
         >
           Política de privacidade

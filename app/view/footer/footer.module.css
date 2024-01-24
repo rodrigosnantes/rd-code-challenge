@@ -11,8 +11,16 @@
   text-align: center;
 }
 
-.span {
+.link {
   font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  color: #636e7c;
+  cursor: pointer;
+}
+
+.span {
+  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   color: #636e7c;

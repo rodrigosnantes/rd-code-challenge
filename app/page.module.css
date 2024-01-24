@@ -1,9 +1,17 @@
-.main {
+.mainContainer {
   min-height: 100vh;
   background-color: #7c6af8;
 }
 
-.box {
+.homeSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.3rem 1.5rem;
+}
+
+.sectionBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,8 +19,15 @@
   margin-top: 2.7rem;
 }
 
+@media (min-width: 768px) {
+  .homeSection {
+    width: 100%;
+    padding: 4.5rem 5rem;
+  }
+}
+
 @media (min-width: 1025px) {
-  .box {
+  .sectionBox {
     display: flex;
     flex-direction: row;
     gap: 11.8rem;

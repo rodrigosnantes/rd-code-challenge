@@ -5,20 +5,19 @@ import Banner from './view/banner/Banner';
 import HomeSectionTitle from './view/home-sec-title/HomeSecTitle';
 import HomeSectionForm from './view/home-sec-form/HomeSecForm';
 
-import { HomePageContainer } from './view/page-container/PageContainer';
 import HomeUsagePolicy from './view/home-usage-policy/HomeUsagePolicy';
 
 import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.mainContainer}>
       <Header />
 
-      <HomePageContainer>
+      <section className={styles.homeSection}>
         <HomeSectionTitle />
 
-        <div className={styles.box}>
+        <div className={styles.sectionBox}>
           <Banner />
 
           <div>
@@ -27,7 +26,7 @@ export default function Home() {
             <BuildButton />
           </div>
         </div>
-      </HomePageContainer>
+      </section>
 
       <Footer />
     </main>
