@@ -23,7 +23,7 @@ export default function Home() {
           <div>
             <HomeSectionForm />
             <HomeUsagePolicy />
-            <BuildButton />
+            {/* <BuildButton /> */}
           </div>
         </div>
       </section>

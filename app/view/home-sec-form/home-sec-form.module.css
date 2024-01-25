@@ -15,11 +15,18 @@
 @media (min-width: 1025px) {
   .form {
     margin-top: 0rem;
-    width: 38.7rem;
+    /* width: 38.7rem; */
   }
 
   .formContainer {
     display: flex;
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1441px) {
+  .form {
+    margin-top: 0rem;
+    width: 38.7rem;
   }
 }
