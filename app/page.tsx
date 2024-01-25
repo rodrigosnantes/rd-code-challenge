@@ -1,6 +1,5 @@
 import Footer from './view/footer/Footer';
 import Header from './view/header/Header';
-import BuildButton from './view/build-button/BuildButton';
 import Banner from './view/banner/Banner';
 import HomeSectionTitle from './view/home-sec-title/HomeSecTitle';
 import HomeSectionForm from './view/home-sec-form/HomeSecForm';
@@ -23,7 +22,6 @@ export default function Home() {
           <div>
             <HomeSectionForm />
             <HomeUsagePolicy />
-            {/* <BuildButton /> */}
           </div>
         </div>
       </section>
