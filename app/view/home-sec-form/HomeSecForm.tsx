@@ -21,13 +21,17 @@ export default function HomeSectionForm() {
       ...prev,
       [name]: name === 'phone' ? phoneMask(value) : value,
     }));
-  }, []);
+  },[]);
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
-    const formValid = validateFormData(formData);
+    const { isValid, invalidField } = validateFormData(formData);
 
-    if (formValid) {
+    if (!isValid) {
+      alert(`Erro ao validar ${invalidField}`);
+    }
+
+    if (isValid) {
       handlePostFormData(formData);
       router.push('/result');
     }

@@ -34,8 +34,14 @@ export function validateFormData(data: {
   phone: string;
   mail: string;
 }) {
-  const nameIsValid = validateUserName(data.name);
-  const emailIsValid = validateUserEmail(data.mail);
-  const phoneIsValid = validateUserPhone(data.phone);
-  return nameIsValid && emailIsValid && phoneIsValid;
+  if (!validateUserName(data.name)) {
+    return { isValid: false, invalidField: 'name' };
+  }
+  if (!validateUserEmail(data.mail)) {
+    return { isValid: false, invalidField: 'email' };
+  }
+  if (!validateUserPhone(data.phone)) {
+    return { isValid: false, invalidField: 'phone' };
+  }
+  return { isValid: true };
 }

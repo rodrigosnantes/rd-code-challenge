@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import AppService from './provider/AppService';
 
