@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.button::before {
+  content: '<';
+  margin-right: 0.6rem;
+}
+
 @media (min-width: 768px) {
   .button {
     font-size: 1.25rem;

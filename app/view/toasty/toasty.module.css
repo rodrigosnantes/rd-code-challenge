@@ -5,9 +5,23 @@
   width: 400px;
   height: 50px;
   border: 1px solid #000;
-  box-shadow: rgb(0, 0, 0) 0px 3px 0px 0px;
   transition: 1000ms;
   transform: translateY(0);
+}
+
+.toasty::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: calc(0% - 1px);
+  width: calc(100% + (2 * 1px));
+  border-top: 4px solid #000;
+  border-left: 8px solid rgba(0, 0, 0, 0);
+  border-right: 8px solid rgba(0, 0, 0, 0);
+  height: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .toastyText {

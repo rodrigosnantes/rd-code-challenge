@@ -11,12 +11,15 @@ export default function BackButton() {
   const { setFormData } = useContext(AppContext);
 
   return (
-    <button className={styles.button} onClick={() => {
-      router.back();
-      setFormData(null)
-    }}>
-      {'< Gerar outro cartão'}
+    <button
+      tabIndex={1}
+      className={styles.button}
+      onClick={() => {
+        router.back();
+        setFormData(null);
+      }}
+    >
+      Gerar outro cartão
     </button>
   );
 }
-
