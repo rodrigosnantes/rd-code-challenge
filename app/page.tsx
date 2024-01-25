@@ -16,10 +16,7 @@ export default function Home() {
         <HomeSectionTitle />
         <div className={styles.sectionBox}>
           <Banner />
-          <div>
-            <HomeSectionForm />
-            <HomeUsagePolicy />
-          </div>
+          <HomeSectionForm />
         </div>
       </section>
       <Footer />

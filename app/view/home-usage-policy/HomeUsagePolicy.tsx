@@ -3,7 +3,7 @@ import styles from './home-usage-policy.module.css';
 
 export default function HomeUsagePolicy() {
   return (
-    <ul className={styles.politics}>
+    <ul>
       <li className={styles.li}>
         Ao preencher o formulário, concordo * em receber comunicações de acordo
         com meus interesses.

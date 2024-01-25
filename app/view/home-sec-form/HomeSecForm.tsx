@@ -4,13 +4,15 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useContext, useRef, useState } from 'react';
 
 import { AppContext } from '../../provider/AppProvider';
-import { EForm, Tform } from '../../domain/form';
+import { Tform } from '../../domain/form';
+import { Ttoasty } from '../../domain/toasty';
 import { phoneMask, validateFormData } from '../../service/form-service';
 import BuildButton from '../build-button/BuildButton';
+import HomeUsagePolicy from '../home-usage-policy/HomeUsagePolicy';
 import Input from '../input/Input';
-import styles from './home-sec-form.module.css';
 import Toasty from '../toasty/Toasty';
-import { Ttoasty } from '../../domain/toasty';
+
+import styles from './home-sec-form.module.css';
 
 export default function HomeSectionForm() {
   const router = useRouter();
@@ -61,33 +63,37 @@ export default function HomeSectionForm() {
 
   return (
     <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-      <Input
-        name="name"
-        label="Nome*"
-        placeholder="Nome"
-        value={formData.name}
-        callback={handleChange}
-      />
-
       <div className={styles.formContainer}>
         <Input
-          name="phone"
-          label="Telefone*"
-          value={formData.phone}
-          placeholder="(00) 0 0000-0000"
+          name="name"
+          label="Nome*"
+          placeholder="Nome"
+          value={formData.name}
           callback={handleChange}
         />
 
-        <Input
-          name="mail"
-          label="E-mail*"
-          value={formData.mail}
-          placeholder="nome@email.com"
-          callback={handleChange}
-        />
+        <div className={styles.formGroup}>
+          <Input
+            name="phone"
+            label="Telefone*"
+            value={formData.phone}
+            placeholder="(00) 0 0000-0000"
+            callback={handleChange}
+          />
+
+          <Input
+            name="mail"
+            label="E-mail*"
+            value={formData.mail}
+            placeholder="nome@email.com"
+            callback={handleChange}
+          />
+        </div>
       </div>
 
       <Toasty ref={tostyRef} variant={onError.variant} text={onError.text} />
+
+      <HomeUsagePolicy />
 
       <BuildButton />
     </form>

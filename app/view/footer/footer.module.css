@@ -13,15 +13,15 @@
 
 .link {
   font-weight: 700;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
   color: #636e7c;
   cursor: pointer;
 }
 
 .span {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
   color: #636e7c;
 }
