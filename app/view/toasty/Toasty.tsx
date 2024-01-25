@@ -1,16 +1,9 @@
-import {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from 'react';
-import { Ttoasty } from '../../domain/toasty';
+import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import styles from './toasty.module.css';
 
-const Toasty = forwardRef(({ variant, text }: Ttoasty, ref: any) => {
-  const modalRef = useRef<HTMLDialogElement | null>(null);
+const Toasty: React.ForwardRefRenderFunction<ToastyHandles, ToastyProps> = (props: any, ref) => {
+  const { variant, text } = props;
   const [show, setShow] = useState(false);
 
   function openModal() {
@@ -21,11 +14,6 @@ const Toasty = forwardRef(({ variant, text }: Ttoasty, ref: any) => {
     setShow(false);
   }
 
-  useImperativeHandle(ref, () => ({
-    openModal,
-    closeModal,
-  }));
-
   useEffect(() => {
     if (show) {
       const timeoutId = setTimeout(() => {
@@ -35,9 +23,13 @@ const Toasty = forwardRef(({ variant, text }: Ttoasty, ref: any) => {
     }
   }, [show]);
 
+  useImperativeHandle(ref, () => ({
+    openModal,
+    closeModal,
+  }));
+
   return (
     <div
-      ref={modalRef}
       id="toasty"
       className={`${styles.toasty} ${!show ? styles.hide : styles.show} ${
         styles[variant]
@@ -46,8 +38,17 @@ const Toasty = forwardRef(({ variant, text }: Ttoasty, ref: any) => {
       <span className={styles.toastyText}>{text}</span>
     </div>
   );
-});
+};
 
-Toasty.displayName = 'Toasty';
+export default forwardRef(Toasty);
 
-export default Toasty;
+export interface ToastyHandles {
+  openModal: () => void;
+  closeModal: () => void;
+}
+
+export interface ToastyProps {
+  ref: React.RefObject<ToastyHandles>;
+  variant: string;
+  text: string;
+}

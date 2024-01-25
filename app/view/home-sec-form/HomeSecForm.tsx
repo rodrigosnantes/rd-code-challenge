@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useCallback, useContext, useRef, useState } from 'react';
+import { FormEvent, useCallback, useContext, useRef, useState } from 'react';
 
 import { AppContext } from '../../provider/AppProvider';
 import { Tform } from '../../domain/form';
@@ -10,13 +10,13 @@ import { phoneMask, validateFormData } from '../../service/form-service';
 import BuildButton from '../build-button/BuildButton';
 import HomeUsagePolicy from '../home-usage-policy/HomeUsagePolicy';
 import Input from '../input/Input';
-import Toasty from '../toasty/Toasty';
+import Toasty, { ToastyHandles } from '../toasty/Toasty';
 
 import styles from './home-sec-form.module.css';
 
 export default function HomeSectionForm() {
   const router = useRouter();
-  const tostyRef = useRef(null);
+  const tostyRef = useRef<ToastyHandles>(null);
   const { setFormData: handlePostFormData } = useContext(AppContext);
 
   const [formData, setFormData] = useState<Tform>({} as Tform);
@@ -36,12 +36,16 @@ export default function HomeSectionForm() {
     []
   );
 
-  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const { isValid, invalidField } = validateFormData(formData);
 
     if (!isValid) {
-      tostyRef?.current?.openModal();
+      // tostyRef?.current?.openModal();
+
+      if (tostyRef?.current) {
+        tostyRef?.current?.openModal();
+      }
       setOnError({
         variant: 'error',
         text: `Erro ao validar ${invalidField}`,
@@ -49,7 +53,10 @@ export default function HomeSectionForm() {
     }
 
     if (isValid) {
-      tostyRef?.current?.openModal();
+      if (tostyRef?.current) {
+        tostyRef?.current?.openModal();
+      }
+
       setOnError({
         variant: 'success',
         text: 'Gerando....',
@@ -62,7 +69,7 @@ export default function HomeSectionForm() {
   }
 
   return (
-    <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formContainer}>
         <Input
           name="name"
