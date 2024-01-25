@@ -85,7 +85,7 @@ export default function HomeSectionForm() {
             name="mail"
             label="E-mail*"
             value={formData.mail}
-            placeholder="nome@email.com"
+            placeholder="email@email.com"
             callback={handleChange}
           />
         </div>

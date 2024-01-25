@@ -8,15 +8,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.3rem 1.5rem;
+  padding: 3.3rem 1.5rem 6.7rem 1.5rem;
 }
 
-.sectionBox { 
+.sectionBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2.7rem;
+  margin-top: 2.75rem;
 }
 
 @media (min-width: 768px) {
@@ -33,7 +33,6 @@
     gap: 5rem;
   }
 }
-
 
 @media (min-width: 1228px) {
   .sectionBox {

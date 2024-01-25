@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-
-import simpleLogo from '../../assets/logo.svg';
-import styles from './preview-card.module.css';
 import { useContext } from 'react';
 import { AppContext } from '../../provider/AppProvider';
+import simpleLogo from '../../assets/logo.svg';
+
+import styles from './preview-card.module.css';
 
 export default function PreviewCard() {
   return (

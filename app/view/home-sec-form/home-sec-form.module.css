@@ -26,6 +26,7 @@
   .formGroup {
     display: flex;
     flex-direction: row;
+    gap: 2.5rem;
   }
 }
 
