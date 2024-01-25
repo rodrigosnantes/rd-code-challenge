@@ -35,13 +35,13 @@ export function validateFormData(data: {
   mail: string;
 }) {
   if (!validateUserName(data.name)) {
-    return { isValid: false, invalidField: 'name' };
+    return { isValid: false, invalidField: 'Nome' };
   }
   if (!validateUserEmail(data.mail)) {
-    return { isValid: false, invalidField: 'email' };
+    return { isValid: false, invalidField: 'E-mail' };
   }
   if (!validateUserPhone(data.phone)) {
-    return { isValid: false, invalidField: 'phone' };
+    return { isValid: false, invalidField: 'Telefone' };
   }
   return { isValid: true };
 }

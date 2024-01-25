@@ -1,39 +1,61 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useContext, useRef, useState } from 'react';
 
 import { AppContext } from '../../provider/AppProvider';
-import { Tform } from '../../domain/form';
+import { EForm, Tform } from '../../domain/form';
 import { phoneMask, validateFormData } from '../../service/form-service';
 import BuildButton from '../build-button/BuildButton';
 import Input from '../input/Input';
 import styles from './home-sec-form.module.css';
+import Toasty from '../toasty/Toasty';
+import { Ttoasty } from '../../domain/toasty';
 
 export default function HomeSectionForm() {
   const router = useRouter();
+  const tostyRef = useRef(null);
   const { setFormData: handlePostFormData } = useContext(AppContext);
   const [formData, setFormData] = useState<Tform>({} as Tform);
+  const [onError, setOnError] = useState<Ttoasty>({
+    enable: false,
+    variant: '',
+    text: '',
+  });
 
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: name === 'phone' ? phoneMask(value) : value,
-    }));
-  },[]);
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setFormData((prev) => ({
+        ...prev,
+        [name]: name === 'phone' ? phoneMask(value) : value,
+      }));
+    },
+    []
+  );
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     const { isValid, invalidField } = validateFormData(formData);
 
     if (!isValid) {
-      alert(`Erro ao validar ${invalidField}`);
+      tostyRef?.current?.openModal();
+      setOnError({
+        variant: 'error',
+        text: `Erro ao validar ${invalidField}`,
+      });
     }
 
     if (isValid) {
+      tostyRef?.current?.openModal();
+      setOnError({
+        variant: 'success',
+        text: 'Gerando....',
+      });
       handlePostFormData(formData);
-      router.push('/result');
+      setTimeout(() => {
+        router.push('/result');
+      }, 400);
     }
   }
 
@@ -64,6 +86,8 @@ export default function HomeSectionForm() {
           callback={handleChange}
         />
       </div>
+
+      <Toasty ref={tostyRef} variant={onError.variant} text={onError.text} />
 
       <BuildButton />
     </form>
