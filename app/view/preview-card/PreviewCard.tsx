@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 
 import simpleLogo from '../../assets/logo.svg';
 import styles from './preview-card.module.css';
+import { useContext } from 'react';
+import { AppContext } from '../../provider/AppProvider';
 
 export default function PreviewCard() {
   return (
@@ -24,11 +28,15 @@ function CardDivider() {
 }
 
 function CardUserData() {
+  const { formData } = useContext(AppContext);
+
+  if (!formData) return null;
+  
   return (
     <div className={styles.cardDataContainer}>
-      <p className={styles.cardDataParagrapy}>nome e sobrenome</p>
-      <p className={styles.cardDataParagrapy}>(00) 0000-0000</p>
-      <p className={styles.cardDataParagrapy}>meuemail@email.com</p>
+      <p className={styles.cardDataParagrapy}>{formData.name}</p>
+      <p className={styles.cardDataParagrapy}>{formData.phone}</p>
+      <p className={styles.cardDataParagrapy}>{formData.mail}</p>
     </div>
   );
 }

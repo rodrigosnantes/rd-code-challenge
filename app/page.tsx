@@ -12,20 +12,16 @@ export default function Home() {
   return (
     <main className={styles.mainContainer}>
       <Header />
-
       <section className={styles.homeSection}>
         <HomeSectionTitle />
-
         <div className={styles.sectionBox}>
           <Banner />
-
           <div>
             <HomeSectionForm />
             <HomeUsagePolicy />
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   );

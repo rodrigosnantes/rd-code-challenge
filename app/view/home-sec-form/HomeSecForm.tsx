@@ -1,8 +1,9 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 
+import { AppContext } from '../../provider/AppProvider';
 import { Tform } from '../../domain/form';
 import { phoneMask, validateFormData } from '../../service/form-service';
 import BuildButton from '../build-button/BuildButton';
@@ -10,23 +11,26 @@ import Input from '../input/Input';
 import styles from './home-sec-form.module.css';
 
 export default function HomeSectionForm() {
+  const router = useRouter();
+  const { setFormData: handlePostFormData } = useContext(AppContext);
   const [formData, setFormData] = useState<Tform>({} as Tform);
 
-  const router = useRouter();
-  // router.push('/result')}
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: name === 'phone' ? phoneMask(value) : value,
     }));
-  };
+  }, []);
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     const formValid = validateFormData(formData);
-    console.log('formValid', formValid);
+
+    if (formValid) {
+      handlePostFormData(formData);
+      router.push('/result');
+    }
   }
 
   return (
