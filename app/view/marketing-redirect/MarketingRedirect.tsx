@@ -6,6 +6,7 @@ import styles from './marketing-redirect.module.css';
 export default function MarketingRedirect() {
   return (
     <Link
+      target="_blank"
       href="https://app.rdstation.com.br/signup"
       className={styles.container}
     >
