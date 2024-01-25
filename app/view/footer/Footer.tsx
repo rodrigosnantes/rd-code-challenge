@@ -12,7 +12,7 @@ export default function Footer() {
         Politica de privacidade
       </Link>
 
-      <span className={styles.span}>© Resultados Digitais</span>
+      <span className={styles.span}>© 2023 Resultados Digitais</span>
     </footer>
   );
 }
