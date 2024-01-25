@@ -1,4 +1,4 @@
-.header {
+.headerContainer {
   min-width: 100vw;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
   background-color: #fff;
 }
 
-.image {
+.headerLogo {
   width: 100px;
   height: 24px;
 }
@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 768px) {
-  .header {
+  .headerContainer {
     min-width: 100vw;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
     font-weight: 700;
   }
 
-  .image {
+  .headerLogo {
     width: 147px;
     height: 36px;
   }

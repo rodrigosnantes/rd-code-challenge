@@ -5,7 +5,7 @@ import AppService from './provider/AppService';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'RD Station card generator',
+  title: 'RD Card Generator',
 };
 
 export default function RootLayout({

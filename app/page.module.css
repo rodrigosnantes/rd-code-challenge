@@ -11,7 +11,7 @@
   padding: 3.3rem 1.5rem;
 }
 
-.sectionBox {
+.sectionBox { 
   display: flex;
   flex-direction: column;
   justify-content: center;

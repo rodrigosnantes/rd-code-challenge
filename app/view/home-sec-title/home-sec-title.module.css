@@ -4,7 +4,7 @@
   gap: 1rem;
 }
 
-.titleContainerH1 {
+.primaryTitle {
   font-size: 1.5rem;
   color: #fff;
   font-weight: 700;
@@ -12,7 +12,7 @@
   text-align: center;
 }
 
-.titleContainerH3 {
+.secondaryTitle {
   font-size: 1rem;
   line-height: 24px;
   text-align: center;
@@ -25,12 +25,12 @@
     width: 38.8rem;
   }
 
-  .titleContainerH1 {
+  .primaryTitle {
     font-size: 2.5rem;
     line-height: 52.92px;
   }
 
-  .titleContainerH3 {
+  .secondaryTitle {
     font-size: 1.25rem;
     line-height: 28px;
     font-weight: 100;

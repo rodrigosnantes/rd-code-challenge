@@ -16,13 +16,13 @@ export default function Input({
   value?: string | number;
 }) {
   return (
-    <label className={styles.label}>
-      <span className={styles.textLabel}>{label}</span>
+    <label className={styles.inputContainer}>
+      <span className={styles.inputLabel}>{label}</span>
       <input
+        className={styles.input}
         required
         value={value}
         id={name}
-        className={styles.text}
         type={type}
         name={name}
         onChange={callback}

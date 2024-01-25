@@ -18,9 +18,9 @@ export default function HomeSectionForm() {
   const router = useRouter();
   const tostyRef = useRef(null);
   const { setFormData: handlePostFormData } = useContext(AppContext);
+
   const [formData, setFormData] = useState<Tform>({} as Tform);
   const [onError, setOnError] = useState<Ttoasty>({
-    enable: false,
     variant: '',
     text: '',
   });

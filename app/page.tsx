@@ -1,10 +1,8 @@
 import Footer from './view/footer/Footer';
 import Header from './view/header/Header';
-import Banner from './view/banner/Banner';
+import HomeBanner from './view/home-banner/HomeBanner';
 import HomeSectionTitle from './view/home-sec-title/HomeSecTitle';
 import HomeSectionForm from './view/home-sec-form/HomeSecForm';
-
-import HomeUsagePolicy from './view/home-usage-policy/HomeUsagePolicy';
 
 import styles from './page.module.css';
 
@@ -15,7 +13,7 @@ export default function Home() {
       <section className={styles.homeSection}>
         <HomeSectionTitle />
         <div className={styles.sectionBox}>
-          <Banner />
+          <HomeBanner />
           <HomeSectionForm />
         </div>
       </section>
